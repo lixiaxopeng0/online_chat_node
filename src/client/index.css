@@ -1,0 +1,138 @@
+.client_root {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* background-color: yellowgreen; */
+    border: 1px solid #878585;
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+}
+
+.client_login p {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    margin: 5px;
+}
+
+.client_login p input {
+    outline: none;
+}
+
+.submit_login_button {
+    width: 390px;
+    margin: 5px;
+}
+
+.show_info {
+    border-bottom: 1px solid #b2adad;
+    border-top: 1px solid #b2adad;
+    height: 370px;
+}
+
+.submit_button {
+    padding: 0;
+    margin: 0;
+    height: 39px;
+    width: 60px;
+    border: none;
+}
+
+.clinet_text {
+    border: none;
+    height: 38px;
+    width: 314px;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+
+body,
+button,
+div,
+input,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.tooltip,
+.tooltip_leave {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    font-size: 12px;
+    /* background: rgb(222, 225, 225); */
+    text-align: center;
+}
+
+.tooltip {
+    color: deepskyblue;
+}
+
+.tooltip_leave {
+    color: rgb(215, 15, 202);
+}
+
+.self_name,
+.other_name,
+.self_content,
+.other_content {
+    width: 100%;
+    font-size: 12px;
+}
+
+.other_content_parent,
+.self_content_parent {
+    display: flex;
+}
+
+.self_name,
+.other_name {
+    width: 390px;
+    padding: 0 5px;
+}
+
+.self_content_parent {
+    justify-content: end;
+}
+
+.self_name {
+    text-align: right;
+}
+
+.other_name {
+    text-align: left;
+}
+
+.self_content,
+.other_content {
+    border-radius: 5px;
+    padding: 4px;
+    width: 280px;
+}
+
+.self_content {
+    background: #108cee;
+    margin-right: 5px;
+    color: white;
+}
+
+.other_content {
+    background: #868687;
+    margin-left: 5px;
+}

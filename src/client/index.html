@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>临时多人在线聊天室</title>
+    <link href="./index.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+        crossorigin="anonymous"></script>
+    <script src="./index.js" async defer></script>
+</head>
+
+<body>
+    <div class="client_root">
+        <div class="client_login">
+            <p><label>ip:</label><input type="text" class="client_ip" /></p>
+            <p><label>用户名：</label><input type="text" class="username" /></p>
+            <button class="submit_login_button">确定</button>
+        </div>
+        <div class="show_info">
+        </div>
+        <div>
+            <input type="text" class="clinet_text" />
+            <button class="submit_button">发送</button>
+        </div>
+    </div>
+</body>
+
+</html>
