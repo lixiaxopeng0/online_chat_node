@@ -3,6 +3,9 @@
 #### 介绍
 简短的在线聊天室
 
+### 技术
+nodejs + websocket(socket.io) + javascript + html + css
+
 #### 开启服务
 src/server/index.js
 
