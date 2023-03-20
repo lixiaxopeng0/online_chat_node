@@ -29,9 +29,9 @@ function listen() {
 function createServer() {
     clientSocket = io(`ws://${client_ip_text}:8006`);
     clientSocket.emit('message', { username: username_text });
-    clientSocket.on('showUser', (data) => {
+    clientSocket.on('showUser', ({text}) => {
         const div = document.createElement('div');
-        div.innerHTML = data;
+        div.innerHTML = text;
         div.className = 'tooltip';
         show_info.appendChild(div);
     });
@@ -51,6 +51,7 @@ function clientTextChange(e) {
     }, 50);
 }
 
+const list = [];
 function sendClick() {
     if (type === 'ok') {
         confirm('请先填写访问地址和用户名')
@@ -60,21 +61,26 @@ function sendClick() {
     if (!clinet_text) {
         return;
     }
-    clientSocket.emit('send', { username: username_text, value: clinet_text });
+    clientSocket.emit('send', { username: username_text, value: clinet_text, id: Math.random() });
     clientSocket.on('accepted', (data) => {
-        const { username: name, value } = data;
-        let users = document.createElement('div');
-        let contentParent = document.createElement('div');
-        let content = document.createElement('div');
-
-        users.innerHTML = name;
-        content.innerHTML = value;
-        users.className = name === username_text ? 'self_name' : 'other_name';
-        content.className = name === username_text ? 'self_content' : 'other_content';
-        contentParent.className = name === username_text ? 'self_content_parent' : 'other_content_parent';
-        show_info.appendChild(users);
-        contentParent.appendChild(content);
-        show_info.appendChild(contentParent);
+        const { username: name, value, id } = data;
+        if (!list.includes(id)) {
+            list.push(id)
+            let users = document.createElement('div');
+            let contentParent = document.createElement('div');
+            let content = document.createElement('div');
+            users.textContent = name;
+            content.textContent = `${value}`;
+            users.className = name === username_text ? 'self_name' : 'other_name';
+            content.className = name === username_text ? 'self_content' : 'other_content';
+            contentParent.className = name === username_text ? 'self_content_parent' : 'other_content_parent';
+            show_info.appendChild(users);
+            contentParent.appendChild(content);
+            show_info.appendChild(contentParent);
+            clinet_text_div.value = '';
+            clinet_text = '';
+            show_info.scrollTop = show_info.scrollHeight - contentParent.clientHeight;
+        }
     });
 }
 
