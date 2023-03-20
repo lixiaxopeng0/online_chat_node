@@ -34,23 +34,30 @@ label {
 .show_info {
     border-bottom: 1px solid #b2adad;
     border-top: 1px solid #b2adad;
-    height: 370px;
+    height: 350px;
+    overflow: scroll;
+    padding: 10px 0;
 }
 
 .submit_button {
     padding: 0;
     margin: 0;
-    height: 39px;
+    /* height: 39px; */
     width: 60px;
     border: none;
 }
 
 .clinet_text {
     border: none;
-    height: 38px;
+    /* height: 38px; */
     width: 314px;
     padding: 0 10px 0 10px;
     outline: none;
+}
+
+.submit_button,
+.clinet_text {
+    height: 35px;
 }
 
 body,
@@ -123,7 +130,8 @@ button:hover {
 .other_content {
     border-radius: 5px;
     padding: 4px;
-    width: 280px;
+    width: auto;
+    max-width: 340px;
 }
 
 .self_content {
@@ -133,6 +141,6 @@ button:hover {
 }
 
 .other_content {
-    background: #868687;
+    background: #ebebec;
     margin-left: 5px;
 }
