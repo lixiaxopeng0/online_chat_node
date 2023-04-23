@@ -7,6 +7,9 @@
 nodejs + websocket(socket.io) + javascript + html + css
 
 #### 开启服务
+```
+node index.js
+```
 src/server/index.js
 
 #### 打开网页
